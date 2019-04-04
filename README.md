@@ -10,7 +10,7 @@ It encourages functional programming by exporting only pure and curried function
 
 Redux-utils allows you to create namespaced  action types and their associated action creators in a single line.
 
-``` javacript
+``` javascript
 import { createAction } from 'redux-utils';
 
 // All actions related to a single feature are namespaced so they can be eaily debugged using devtools
@@ -24,7 +24,7 @@ setUsername('gbogard') // => { type: 'user.SET_USERNAME', payload: 'gbogard' }
 
 Reducers are also cleaner. You can turn this :
 
-``` javacript
+``` javascript
 const initialState = {
   username: '',
   email: '',
@@ -43,7 +43,7 @@ function myReducer(state = initialState, { type, payload }) {
 
 Into this
 
-``` javacript
+``` javascript
 import { createReducer, setter } from 'redux-utils';
 
 const initialState = {
@@ -63,7 +63,7 @@ of your state to the payload. It's signature allows for direct use in reducers c
 
 You can use it on a top-level property :
 
-``` javacript
+``` javascript
 createReducer(initialstate, {
   [SET_PROFILE]: setter('profile')
 })
@@ -71,7 +71,7 @@ createReducer(initialstate, {
 
 Or you can update a path :
 
-``` javacript
+``` javascript
 createReducer(initialstate, {
   [SET_USERNAME]: setter('profile', 'details', 'username')
 })
