@@ -1,6 +1,6 @@
 # Redux-adjunct
 
-An opinionated set of utilities to make redux applications easier to maintain. Redux-utils reduces the boilerplate
+An opinionated set of utilities to make redux applications easier to maintain. Redux-adjunct reduces the boilerplate
 required to write reducers and encourages developers to organize their code around features instead of splitting
 code based on technical details.
 
@@ -27,10 +27,10 @@ yarn add redux-adjunct
 
 ## Write concise reducers with less effort
 
-Redux-utils allows you to create namespaced  action types and their associated action creators in a single line.
+Redux-adjunct allows you to create namespaced  action types and their associated action creators in a single line.
 
 ``` javascript
-import { createAction } from 'redux-utils';
+import { createAction } from 'redux-adjunct';
 
 // All actions related to a single feature are namespaced so they can be eaily debugged using devtools
 const action = createAction('user');
@@ -63,7 +63,7 @@ function myReducer(state = initialState, { type, payload }) {
 Into this
 
 ``` javascript
-import { createReducer, setter } from 'redux-utils';
+import { createReducer, setter } from 'redux-adjunct';
 
 const initialState = {
   username: '',
@@ -100,7 +100,7 @@ Note that when dealing with arrays you can also use the index of the element you
 
 ## Focus on features
 
-Through concision, redux-utils enables to put action types, action creators and reducers together in a single file
+Through concision, redux-adjunct enables to put action types, action creators and reducers together in a single file
 based on the feature they relate to. This allows to think in a _feature-centric_ way, where instead of having a hierarchy
 that looks like this :
 
