@@ -10,7 +10,7 @@ It encourages functional programming by exporting only pure and curried function
 
 Redux is a great tool, too often underestimated. Recently, we've seen many people move away from Redux,
 as it has a reputation for being cumberstone and hard to get into. The boilerplate required to create action types,
-actions and reducers can be frustrating. This is attempt at reducing this boilerplate by providing a set of simple tools
+actions and reducers can be frustrating. This is an attempt at reducing this boilerplate by providing a set of simple tools
 that make writing Redux apps faster.
 
 Concision is its own reward.
@@ -27,7 +27,7 @@ yarn add redux-adjunct
 
 ## Write concise reducers with less effort
 
-Redux-adjunct allows you to create namespaced  action types and their associated action creators in a single line.
+Redux-adjunct allows you to create namespaced action types and their associated action creators in a single line.
 
 ``` javascript
 import { createAction } from 'redux-adjunct';
@@ -78,7 +78,7 @@ const myReducer = createReducer(initialstate, {
 ### Setters
 
 The `setter` method returns a method that, given a state and a payload, will set a single property
-of your state to the payload. It's signature allows for direct use in reducers created with `createReducer`.
+of your state to the payload. Its signature allows for direct use in reducers created with `createReducer`.
 
 You can use it on a top-level property :
 
