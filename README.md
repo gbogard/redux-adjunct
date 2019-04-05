@@ -1,10 +1,29 @@
-# Redux-utils
+# Redux-adjunct
 
 An opinionated set of utilities to make redux applications easier to maintain. Redux-utils reduces the boilerplate
 required to write reducers and encourages developers to organize their code around features instead of splitting
 code based on technical details.
 
 It encourages functional programming by exporting only pure and curried functions.
+
+## Motivation
+
+Redux is a great tool, too often underestimated. Recently, we've seen many people move away from Redux,
+as it has a reputation for being cumberstone and hard to get into. The boilerplate required to create action types,
+actions and reducers can be frustrating. This is attempt at reducing this boilerplate by providing a set of simple tools
+that make writing Redux apps faster.
+
+Concision is its own reward.
+
+## Install
+
+``` javacript
+npm install redux-adjunct
+```
+
+``` javacript
+yarn add redux-adjunct
+```
 
 ## Write concise reducers with less effort
 
