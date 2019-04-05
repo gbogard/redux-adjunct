@@ -1,5 +1,8 @@
 {
   "types": ["jest"],
+  "exclude": [
+    "./test"
+  ],
   "compilerOptions": {
     "target": "es2015",
     "module": "commonjs",
