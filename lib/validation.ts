@@ -7,8 +7,8 @@ type ValueType = 'Null'
     | 'Array'
     | 'Function'
     | 'Boolean';
-type Predicate = (val: any) => boolean;
-interface Shape { [key: string]: Predicate }
+export type Predicate = (val: any) => boolean;
+export interface Shape { [key: string]: Predicate }
 interface Object { [key:string]: any }
 
 function getType(val: any): ValueType {
