@@ -1,4 +1,5 @@
 import { curry } from '@typed/curry';
+import { isArray } from './validation';
 
 interface Action<P> { type: string, payload: P };
 type ActionCreator<P> = (payload?: P) => Action<P>;
@@ -22,7 +23,7 @@ function createReducerFn<S extends State>(
 
 function set<S extends State>(prop: string|number, value: any, obj: S): S {
    
-    if (Array.isArray(obj)) {
+    if (isArray(obj)) {
         const i = Number(prop);
         return [
             ...obj.slice(0, i),
@@ -49,3 +50,23 @@ export const createAction = curry(createActionFn);
 export const createReducer = curry(createReducerFn);
 
 export const setter = (...props: string[]) => <S extends State>(state: S, value: any) => setPath(props, value, state);
+
+export {
+    hasShape,
+    hasType,
+    isFalsy,
+    isArray,
+    isBoolean,
+    isFunction,
+    isNumber,
+    isString,
+    isNull,
+    isUndefined,
+    isArrayOrUndefined,
+    isBooleanOrUndefined,
+    isFunctionOrUndefined,
+    isNumberOrUndefined,
+    isStringOrUndefined,
+    or,
+    and,
+} from './validation';
