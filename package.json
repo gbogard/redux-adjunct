@@ -3,7 +3,7 @@
   "version": "0.2.1",
   "description": "An opinionated set of utilities to make redux applications easier to maintain.",
   "main": "dist/index.js",
-  "types" : "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
     "build": "tsc"
@@ -34,7 +34,7 @@
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-typescript": "^7.3.3",
-    "babel-jest": "^24.7.1",
-    "ramda": "^0.26.1"
+    "@typed/curry": "^1.0.1",
+    "babel-jest": "^24.7.1"
   }
 }
