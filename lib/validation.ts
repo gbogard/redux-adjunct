@@ -31,6 +31,14 @@ export function isFalsy(val: any): boolean {
     return !!val;
 }
 
+export function hasMinLength(length: number): Predicate {
+    return (val: any) => val.length >= length
+}
+
+export function hasMaxLength(length: number): Predicate {
+    return (val: any) => val.length <= length
+}
+
 export function or(...predicates: Predicate[]): Predicate {
     return (val: any) => predicates.some(p => p(val));
 }

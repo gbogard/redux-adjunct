@@ -89,6 +89,8 @@ export {
     isFunctionOrUndefined,
     isNumberOrUndefined,
     isStringOrUndefined,
+    hasMaxLength,
+    hasMinLength,
     or,
     and,
 } from './validation';
