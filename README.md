@@ -10,7 +10,7 @@ It encourages functional programming by exporting only pure and curried function
 
 Redux is a great tool, too often underestimated. Recently, we've seen many people move away from Redux,
 as it has a reputation for being cumberstone and hard to get into. The boilerplate required to create action types,
-actions and reducers can be frustrating. This is attempt at reducing this boilerplate by providing a set of simple tools
+actions and reducers can be frustrating. This is an attempt at reducing this boilerplate by providing a set of simple tools
 that make writing Redux apps faster. It also enforces correctness and documentation for actions and action types.
 
 I belive concision is its own reward, so the library is highly motivated by the satisfaction of being able to write
@@ -26,7 +26,7 @@ npm install redux-adjunct
 yarn add redux-adjunct
 ```
 
-## Write action creators and enforce corectness
+## Write action creators and enforce correctness
 
 Redux-adjunct allows you to create namespaced action types and their associated action creators in a single line.
 
@@ -34,7 +34,7 @@ Redux-adjunct allows you to create namespaced action types and their associated 
 import { createAction } from 'redux-adjunct';
 
 // All actions related to a single feature are namespaced so they can be eaily debugged using devtools
-const action = createActionSpec('user');
+const action = createAction('user');
 
 const [SET_USERNAME, setUsername] = createAction('SET_USERNAME');
 const [SET_EMAIL, setEmail] = createAction('SET_EMAIL');
@@ -44,19 +44,19 @@ setUsername('gbogard') // => { type: 'user.SET_USERNAME', payload: 'gbogard' }
 
 ### Validating the payload of your actions
 
-In a weakly typed language like Javacript, it's common to forget a property or to put a number in place of a string.
+In a weakly typed language like Javascript, it's common to forget a property or to put a number in place of a string.
 Redux-adjunct can enforce payload correctness at runtime to catch most of those errors during development. Note that 
 this feature is completely opt-in. 
 
 The `createActionSpec` function works just like `createAction`, except it accepts one more argument in the form of a
 predicate. You need to provide a function that given the action's payload will return either true or false to indicate
-whether the payload is correct. You can put any validation logic you'd like, put redux-adjunct provides several ready to use
+whether the payload is correct. You can put any validation logic you'd like, but redux-adjunct provides several ready to use
 predicates for you.
 
 ``` javascript
 import { createActionSpec, isNumber, isString } from 'redux-adjunct';
 
-const action = createAction('user');
+const action = createActionSpec('user');
 
 // Age must be a number
 const [SET_AGE, setAge] = createAction('SET_AGE', isNumber);
@@ -83,7 +83,7 @@ const [SET_USER, setUser] = createAction('SET_USER', hasShape({
 
 #### Combining predicates with logical combinators
 
-Redux-adjunct provide `and` and  `or` functions that allows you to combine predicates into a single one.
+Redux-adjunct provides `and` and  `or` functions that allows you to combine multiple predicates into a single one.
 
 ``` javascript
 import { createActionSpec, hasShape, isNumber, isUndefined, or } from 'redux-adjunct';
@@ -94,8 +94,8 @@ const [SET_USER, setUser] = createAction('SET_USER', hasShape({
 }));
 ```
 
-Redux-adjunct comes with various types predicates like `isString`, `isFunction`, `isBoolean` that also
-come in the form `isStringOrUndefined`, `isFunctionOrUndefined`, `isBooleanOrUndefined`.
+Redux-adjunct comes with various type predicates like `isString`, `isFunction`, `isBoolean` that also
+come in the form `isStringOrUndefined`, `isFunctionOrUndefined`, `isBooleanOrUndefined` for optional fields.
 
 `and` allows you to specify multiple requirements for your payload 
 
@@ -109,7 +109,7 @@ const [SET_USERNAME, setUserName] = createAction('SET_USERNAME', and(isString, h
 ## Write concise reducers with less effort
 
 A reducer is merely a function that takes an action and the current state and returns a new state. The
-logic inside a reducer can be anything as long as the function remains pure. Howevwer, a very common pattern
+logic inside a reducer can be anything as long as the function remains pure. However, a very common pattern
 in Redux is to `switch` over the action's type and return the appropriate state for each action :
 
 ``` javascript
