@@ -28,7 +28,7 @@ yarn add redux-adjunct
 
 ## Write action creators and enforce corectness
 
-Redux-adjunct allows you to create namespaced  action types and their associated action creators in a single line.
+Redux-adjunct allows you to create namespaced action types and their associated action creators in a single line.
 
 ``` javascript
 import { createAction } from 'redux-adjunct';
@@ -165,7 +165,7 @@ In this case, `evolve({ isOpen: not })` is equivalent to `state => ({ ...state, 
 ### Setters
 
 The `setter` method returns a method that, given a state and a payload, will set a single property
-of your state to the payload. It's signature allows for direct use in reducers created with `createReducer`.
+of your state to the payload. Its signature allows for direct use in reducers created with `createReducer`.
 
 You can use it on a top-level property :
 
