@@ -1,6 +1,6 @@
 {
   "name": "redux-adjunct",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "An opinionated set of utilities to make redux applications easier to maintain.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,17 +24,17 @@
   },
   "homepage": "https://github.com/gbogard/redux-adjunct#readme",
   "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-typescript": "^7.3.3",
     "@types/jest": "^24.0.11",
     "@types/ramda": "^0.26.6",
+    "babel-jest": "^24.7.1",
     "jest": "^24.7.1",
     "tslib": "^1.9.3",
     "typescript": "^3.4.1"
   },
   "dependencies": {
-    "@babel/core": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
-    "@babel/preset-typescript": "^7.3.3",
-    "@typed/curry": "^1.0.1",
-    "babel-jest": "^24.7.1"
+    "@typed/curry": "^1.0.1"
   }
 }
