@@ -18,11 +18,13 @@ describe('setter', () => {
     })
 
     it('Should return a setter a setter function for path when used with multiple strings.', () => {
-        const setGame = setter('champions', 0, 'name');
-        expect(setGame(state, 'Veigar')).toEqual({
+        const setChampionName = setter('champions', 0, 'name');
+        const setChampionStats = setter('champions', 0, 'stats');
+        const newState = setChampionStats(setChampionName(state, 'Veigar'), { ap: 900 });
+        expect(newState).toEqual({
             ...state,
             champions: [
-                { name: 'Veigar' },
+                { name: 'Veigar', stats: { ap: 900 } },
                 { name: 'Illaoi' },
             ]
         })

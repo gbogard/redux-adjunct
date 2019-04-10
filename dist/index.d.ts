@@ -1,12 +1,8 @@
-/// <reference types="ramda" />
-interface Action<P> {
-    type: string;
-    payload: P;
-}
-declare type ActionCreator<P> = (payload?: P) => Action<P>;
-export declare const createAction: Curry.Curry<(namespace: string, type: string) => [string, ActionCreator<any>]>;
-export declare const createReducer: Curry.Curry<(initialState: any, actionMap: {
-    [actionType: string]: (currentState: any, payload: any) => any;
-}) => (state: any, { type, payload }: Action<any>) => any>;
-export declare const setter: <S>(...props: (string | number)[]) => (state: S, value: any) => S;
-export {};
+declare type State = {
+    [key: string]: any;
+} | any[];
+export declare const createAction: import("@typed/curry").Curry2<any, any, any>;
+export declare const createActionSpec: import("@typed/curry").Curry3<any, any, any, any>;
+export declare const createReducer: import("@typed/curry").Curry2<any, any, any>;
+export declare const setter: (...props: string[]) => <S extends State>(state: S, value: any) => S;
+export { hasShape, hasType, isFalsy, isArray, isBoolean, isFunction, isNumber, isString, isNull, isUndefined, isArrayOrUndefined, isBooleanOrUndefined, isFunctionOrUndefined, isNumberOrUndefined, isStringOrUndefined, hasMaxLength, hasMinLength, or, and, } from './validation';
